@@ -27,7 +27,12 @@ window.TRAVEL_PHOTOS = {
   "广东": [],
   "广西": [],
   "海南": {
-    "风景": [],
+    "风景": [
+      "travel/海南/风景/yemeng-changlang.jpg",
+      "travel/海南/风景/lingshui-night.jpg",
+      "travel/海南/风景/sanya-bay.jpg",
+      "travel/海南/风景/daboluo-mall.jpg"
+    ],
     "美食": [
       "travel/海南/美食/IMG_1596.jpg",
       "travel/海南/美食/IMG_1608.jpg",

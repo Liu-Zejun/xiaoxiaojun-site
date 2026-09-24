@@ -31,8 +31,9 @@ window.TRAVEL_PHOTOS = {
       "travel/海南/风景/yemeng-changlang.jpg",
       "travel/海南/风景/lingshui-night.jpg",
       "travel/海南/风景/sanya-bay.jpg",
-      "travel/海南/风景/daboluo-mall.jpg"
-    ],
+      "travel/海南/风景/daboluo-mall.jpg",
+      "travel/海南/风景/park-path.jpg",
+      "travel/海南/风景/lingshui-beach.jpg"],
     "美食": [
       "travel/海南/美食/IMG_1596.jpg",
       "travel/海南/美食/IMG_1608.jpg",

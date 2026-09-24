@@ -517,6 +517,36 @@
   document.body.classList.toggle("is-owner", isAlbumOwner());
   document.body.classList.toggle("is-owner-device", isOwnerDevice());
 
+  const exportAlbum = document.getElementById("export-album");
+  if (exportAlbum) {
+    exportAlbum.addEventListener("click", async function () {
+      const backup = { exportedAt: new Date().toISOString(), localStorage: {}, albumPhotos: [] };
+      try {
+        for (let i = 0; i < window.localStorage.length; i++) {
+          const key = window.localStorage.key(i);
+          if (key) backup.localStorage[key] = window.localStorage.getItem(key);
+        }
+      } catch (e) {}
+      try {
+        const db = await openDB();
+        backup.albumPhotos = await new Promise(function (resolve, reject) {
+          const tx = db.transaction(DB_STORE, "readonly");
+          const req = tx.objectStore(DB_STORE).getAll();
+          req.onsuccess = function () { resolve(req.result || []); };
+          req.onerror = function () { reject(req.error); };
+        });
+      } catch (e) {}
+      const blob = new Blob([JSON.stringify(backup)], { type: "application/json" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "album-backup.json";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      travelHint.textContent = "备份已导出：album-backup.json";
+    });
+  }
+
   const clearAlbum = document.getElementById("clear-album");
   if (clearAlbum) {
     clearAlbum.addEventListener("click", function () {

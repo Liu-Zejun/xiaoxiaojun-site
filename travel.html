@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的相册 · 中国地图</title>
+  <meta name="description" content="小小俊的旅行相册：点中国地图上的省份，看照片、点赞、上传照片。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="travel-page">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="home.html#home">
+        <span class="brand-mark"><img src="images/avatar.jpg" alt=""></span>
+        <span class="brand-name">小小俊</span>
+      </a>
+      <div class="header-right">
+        <p class="header-datetime" id="header-datetime" aria-hidden="true">2026.08.04 00:00</p>
+        <nav class="main-nav" id="main-nav" aria-label="主导航">
+          <a href="home.html#home" class="nav-link"><span>01</span>首页</a>
+          <a href="home.html#about" class="nav-link"><span>02</span>关于我</a>
+          <a href="home.html#now" class="nav-link"><span>03</span>此刻</a>
+          <a href="home.html#works" class="nav-link is-active"><span>04</span>作品</a>
+          <a href="home.html#contact" class="nav-link"><span>05</span>联系我</a>
+        </nav>
+        <button class="owner-key" id="album-owner-key" type="button" aria-label="管理员模式" title="管理员模式">🔑</button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section travel-page-section" id="album">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">我的相册</p>
+          <h1 class="display">我们的足迹</h1>
+          <p class="section-sub">点击地图上的省份来分享你手中的美好吧！</p>
+        </div>
+        <div class="travel-layout">
+          <div class="map-frame">
+            <div class="map-deco" aria-hidden="true">
+              <span class="map-sticker ms-tape t1"></span>
+              <span class="map-sticker ms-tape t2"></span>
+              <span class="map-sticker ms-sun">☀</span>
+              <span class="map-sticker ms-moon">☾</span>
+              <span class="map-sticker ms-star s1">✦</span>
+              <span class="map-sticker ms-star s2">✧</span>
+              <svg class="map-sticker ms-compass" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="24" cy="24" r="20"/>
+                <path d="M28 16 32 32 24 27 16 32 20 16z"/>
+              </svg>
+              <svg class="map-sticker ms-camera" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="6" y="16" width="36" height="24" rx="4"/>
+                <path d="M18 16l3-5h6l3 5"/>
+                <circle cx="24" cy="28" r="7"/>
+              </svg>
+              <span class="map-sticker ms-film"></span>
+              <span class="map-sticker ms-word w1">EXPLORE CHINA</span>
+              <span class="map-sticker ms-word w2">KEEP MOVING</span>
+              <span class="map-sticker ms-word w3">SUN &amp; SEA</span>
+            </div>
+            <div class="map-canvas" id="china-map" role="img" aria-label="中国地图，点击省份查看照片"></div>
+          </div>
+          <aside class="travel-panel">
+            <div class="travel-panel-head">
+              <div>
+                <p class="travel-panel-title" id="travel-place">选择一个省份</p>
+                <p class="travel-panel-hint" id="travel-hint">点击地图上的省份，这里会出现照片。</p>
+              </div>
+              <button class="upload-btn" id="upload-btn" type="button" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                上传照片
+              </button>
+              <input type="file" id="upload-input" accept="image/*" hidden>
+            </div>
+            <div class="travel-tabs" id="travel-tabs">
+              <button class="travel-tab is-active" type="button" data-category="风景">风景</button>
+              <button class="travel-tab" type="button" data-category="美食">美食</button>
+            </div>
+            <div class="travel-gallery" id="travel-gallery"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> 小小俊</span>
+      <button class="clear-album" id="clear-album" type="button">清空本机相册缓存</button>
+      <a class="footer-note" href="home.html">返回首页</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5 5m5-5 5 5"/></svg>
+  </button>
+
+  <script src="assets/echarts.min.js"></script>
+  <script src="assets/china-map-data.js"></script>
+  <script src="assets/china-division.js"></script>
+  <script src="js/travel-data.js"></script>
+  <script>window.__cloudScripts = ["js/travel-map.js"];</script>
+  <script src="js/cloud-sync.js"></script>
+</body>
+</html>

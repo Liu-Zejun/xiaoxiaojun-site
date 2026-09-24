@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三日行程规划 · 小小俊</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/itinerary.css">
+</head>
+<body class="itinerary-page">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="home.html#home">
+        <span class="brand-mark"><img src="images/avatar.jpg" alt=""></span>
+        <span class="brand-name">小小俊</span>
+      </a>
+      <div class="header-right">
+        <p class="header-datetime" id="header-datetime" aria-hidden="true">2026.08.07 00:00:00</p>
+        <nav class="main-nav" id="main-nav" aria-label="主导航">
+          <a href="home.html#home" class="nav-link"><span>01</span>首页</a>
+          <a href="home.html#about" class="nav-link"><span>02</span>关于我</a>
+          <a href="home.html#now" class="nav-link is-active"><span>03</span>此刻</a>
+          <a href="home.html#works" class="nav-link"><span>04</span>作品</a>
+          <a href="home.html#contact" class="nav-link"><span>05</span>联系我</a>
+        </nav>
+        <button class="owner-key" id="owner-key" type="button" aria-label="管理员模式" title="管理员模式">🔑</button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="itinerary-hero">
+      <div class="container itinerary-hero-inner">
+        <p class="eyebrow">03 / 此刻 · PLAN YOUR DAYS</p>
+        <h1 class="display">三日行程规划</h1>
+        <p class="itinerary-hero-sub">把每一天过成喜欢的样子，早、午、晚都认真安排。</p>
+        <div class="itinerary-stickers" aria-hidden="true">
+          <span class="sticker sun-sticker">☀</span>
+          <span class="sticker star-sticker">★</span>
+          <span class="sticker cross-sticker">✚</span>
+          <span class="sticker moon-sticker">☾</span>
+          <span class="sticker tape tape-a"></span>
+          <span class="sticker tape tape-b"></span>
+          <svg class="sticker compass-sticker" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="24" cy="24" r="20"/>
+            <path d="M28 16 32 32 24 27 16 32 20 16z"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="itinerary-main">
+      <div class="container itinerary-layout">
+        <div class="calendar-frame">
+          <div class="calendar-head">
+            <button class="cal-nav" id="cal-prev" type="button" aria-label="上个月">‹</button>
+            <div class="calendar-title">
+              <p class="calendar-month">
+                <button class="cal-year-month" id="cal-year-month" type="button">2026 · 08</button>
+              </p>
+              <p class="calendar-en" id="calendar-en">AUGUST · MAKE IT HAPPEN</p>
+            </div>
+            <button class="cal-nav" id="cal-next" type="button" aria-label="下个月">›</button>
+          </div>
+          <div class="calendar-week">
+            <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+          </div>
+          <div class="calendar-grid" id="calendar-grid"></div>
+          <div class="cal-picker" id="cal-picker" hidden>
+            <div class="cal-picker-panel">
+              <div class="cal-picker-head">
+                <p class="cal-picker-title">快速选择</p>
+                <button class="cal-picker-close" id="cal-picker-close" type="button">✕</button>
+              </div>
+              <div class="cal-picker-section">
+                <p class="cal-picker-label">年份</p>
+                <div class="cal-picker-grid" id="cal-year-grid"></div>
+              </div>
+              <div class="cal-picker-section">
+                <p class="cal-picker-label">月份</p>
+                <div class="cal-picker-grid" id="cal-month-grid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="day-panel" id="day-panel"></aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> 小小俊</span>
+      <a class="footer-note" href="home.html">返回首页</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5 5m5-5 5 5"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">已保存</div>
+  <div class="photo-menu" id="photo-menu">
+    <button class="photo-menu-delete" type="button">删除</button>
+  </div>
+  <input type="file" id="photo-input" accept="image/*" hidden>
+
+  <script src="assets/lunar.js"></script>
+  <script>window.__cloudScripts = ["js/itinerary.js"];</script>
+  <script src="js/cloud-sync.js"></script>
+</body>
+</html>

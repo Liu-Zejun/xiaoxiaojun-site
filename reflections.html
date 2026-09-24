@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随拍与心得 · 小小俊</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reflections.css">
+</head>
+<body class="reflections-page">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="home.html#home">
+        <span class="brand-mark"><img src="images/avatar.jpg" alt=""></span>
+        <span class="brand-name">小小俊</span>
+      </a>
+      <div class="header-right">
+        <p class="header-datetime" id="header-datetime" aria-hidden="true">2026.08.08 00:00:00</p>
+        <nav class="main-nav" id="main-nav" aria-label="主导航">
+          <a href="home.html#home" class="nav-link"><span>01</span>首页</a>
+          <a href="home.html#about" class="nav-link"><span>02</span>关于我</a>
+          <a href="home.html#now" class="nav-link is-active"><span>03</span>此刻</a>
+          <a href="home.html#works" class="nav-link"><span>04</span>作品</a>
+          <a href="home.html#contact" class="nav-link"><span>05</span>联系我</a>
+        </nav>
+        <button class="owner-key" id="owner-key" type="button" aria-label="管理员模式" title="管理员模式">🔑</button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="reflection-hero">
+      <div class="container reflection-hero-inner">
+        <p class="eyebrow">03 / 此刻 · SNAPS &amp; THOUGHTS</p>
+        <h1 class="display">随拍与心得</h1>
+        <p class="reflection-hero-sub">快门留下的光，心里装着的想法，都在这里慢慢生长。</p>
+        <div class="reflection-stickers" aria-hidden="true">
+          <span class="rsticker sun">☀</span>
+          <span class="rsticker sparkle s1">✦</span>
+          <span class="rsticker sparkle s2">✧</span>
+          <span class="rsticker moon">☾</span>
+          <svg class="rsticker camera" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="6" y="16" width="36" height="24" rx="4"/>
+            <path d="M18 16l3-5h6l3 5"/>
+            <circle cx="24" cy="28" r="7"/>
+          </svg>
+          <span class="rsticker tape t1"></span>
+          <span class="rsticker tape t2"></span>
+          <span class="rsticker word w1">KEEP THE MOMENTS</span>
+          <span class="rsticker word w2">NO RUSH</span>
+          <span class="rsticker word w3">LIGHT &amp; SHADOW</span>
+        </div>
+      </div>
+    </section>
+
+    <img class="deco-strip strip-top" src="images/strip-top.jpg" alt="随拍装饰条">
+
+    <section class="reflection-main">
+      <div class="container reflection-layout">
+        <article class="thought-card">
+          <div class="card-label"><span>DAILY THOUGHTS</span><span class="card-label-cn">今日心得</span></div>
+          <div id="thought-body"></div>
+        </article>
+
+        <article class="snaps-card">
+          <div class="card-label"><span>MY SNAPS</span><span class="card-label-cn">我的随手拍</span></div>
+          <button class="upload-photo" id="upload-photo" type="button">+ 放一张照片</button>
+          <div class="snaps-grid" id="snaps-grid"></div>
+        </article>
+      </div>
+
+      <div class="container">
+        <article class="notes-card">
+          <div class="card-label"><span>LEAVE A NOTE</span><span class="card-label-cn">留言</span></div>
+          <div class="notes-list" id="notes-list"></div>
+          <div class="comment-form">
+            <textarea id="note-input" placeholder="说点什么…"></textarea>
+            <button id="note-submit" type="button">发言</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <img class="deco-strip strip-bottom" src="images/strip-bottom.jpg" alt="随拍装饰条">
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> 小小俊</span>
+      <a class="footer-note" href="home.html">返回首页</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5 5m5-5 5 5"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">已保存</div>
+  <div class="photo-menu" id="photo-menu">
+    <button class="photo-menu-delete" type="button">删除</button>
+  </div>
+  <input type="file" id="photo-input" accept="image/*" hidden>
+
+  <script>window.__cloudScripts = ["js/reflections.js"];</script>
+  <script src="js/cloud-sync.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小小俊的个人网站</title>
+  <meta name="description" content="小小俊的个人网站：关于我、作品和联系方式。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark"><img src="images/avatar.jpg" alt=""></span>
+        <span class="brand-name">小小俊</span>
+      </a>
+      <div class="header-right">
+        <p class="header-datetime" id="header-datetime" aria-hidden="true">2026.08.04 00:00</p>
+        <nav class="main-nav" id="main-nav" aria-label="主导航">
+          <a href="#home" class="nav-link is-active"><span>01</span>首页</a>
+          <a href="#about" class="nav-link"><span>02</span>关于我</a>
+          <a href="#now" class="nav-link"><span>03</span>此刻</a>
+          <a href="#works" class="nav-link"><span>04</span>作品</a>
+          <a href="#contact" class="nav-link"><span>05</span>联系我</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-sea" aria-hidden="true"></div>
+      <span class="hero-watermark" aria-hidden="true">俊</span>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">个人网站</p>
+          <h1 class="display">小小俊</h1>
+          <p class="hero-lead">一个正在学习和记录成长的普通人，喜欢动手做点小东西，也喜欢把想法写下来。</p>
+          <p class="hero-status">故事本身没有感染力，是因为与你的故事产生了共鸣✨<br>谢谢因感染你而被喜欢</p>
+          <div class="hero-actions">
+            <a class="btn btn-text" href="#works">
+              追寻我的足迹
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#contact">联系我</a>
+          </div>
+        </div>
+        <figure class="portrait-frame">
+          <div class="portrait">
+            <img class="avatar-img" src="images/avatar.jpg" alt="小小俊的头像">
+          </div>
+          <figcaption>小小俊 · 2007年5月9日</figcaption>
+        </figure>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 62c120-22 260-38 420-30 150 8 270 40 430 36 170-4 280-46 460-38 150 7 110 28 130 26v34H0z"></path>
+      </svg>
+    </section>
+
+    <section class="motto-band" aria-label="座右铭">
+      <div class="container motto-inner">
+        <p class="motto-label">座右铭</p>
+        <blockquote class="motto-text">不管事情多糟糕，心情也要极好的。</blockquote>
+        <p class="motto-foot">与我的每一天共勉</p>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">01 / 关于</p>
+          <h2 class="display">关于我</h2>
+          <p class="section-sub">这里是我的个人网站，也欢迎大家留下些足迹共同建设！</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>以后这里会放我的作品、学习笔记，还有想分享的生活碎片。</p>
+            <p>傍晚的海边，是我喜欢的地方。</p>
+            <figure class="about-collage reveal">
+              <img src="images/life-collage-v5.jpg" alt="生活碎片合集">
+            </figure>
+          </div>
+          <dl class="about-facts reveal">
+            <div>
+              <dt>基本信息</dt>
+              <dd>男、182cm、66kg</dd>
+            </div>
+            <div>
+              <dt>生日</dt>
+              <dd>2007年5月9日</dd>
+            </div>
+            <div>
+              <dt>MBTI</dt>
+              <dd>ENFJ</dd>
+            </div>
+            <div>
+              <dt>地址</dt>
+              <dd>中国·福建·厦门·集美大学</dd>
+            </div>
+            <div>
+              <dt>职业</dt>
+              <dd>大学生、世界打卡家、不太懂构图的小摄影师</dd>
+            </div>
+            <div>
+              <dt>喜欢</dt>
+              <dd>拍照、听歌、散步、旅游</dd>
+            </div>
+            <div>
+              <dt>方向</dt>
+              <dd>设计、哲理</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section now" id="now">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">02 / 此刻</p>
+          <h2 class="display">最近在做什么</h2>
+        </div>
+        <div class="now-list">
+          <article class="now-item reveal">
+            <span class="now-index">01</span>
+            <div class="now-copy">
+              <h3>三日行程规划</h3>
+            </div>
+            <a class="now-state" href="itinerary.html">查看</a>
+          </article>
+          <article class="now-item reveal">
+            <span class="now-index">02</span>
+            <div class="now-copy">
+              <h3>今日份小欢喜</h3>
+            </div>
+            <span class="now-state">日常</span>
+          </article>
+          <article class="now-item reveal">
+            <span class="now-index">03</span>
+            <div class="now-copy">
+              <h3>随拍与心得</h3>
+            </div>
+            <a class="now-state" href="reflections.html">查看</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section works" id="works">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">03 / 作品</p>
+          <h2 class="display">作品</h2>
+          <p class="section-sub">这些位置先空着，等你有了第一个作品就放进来。</p>
+        </div>
+        <div class="works-index">
+          <a class="work-row reveal" href="travel.html">
+            <span class="work-num">01</span>
+            <h3>我的相册</h3>
+            <p>日常每个小小瞬间都值得被记住！</p>
+            <span class="work-tag">进入</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+          </a>
+          <article class="work-row reveal">
+            <span class="work-num">02</span>
+            <h3>学习笔记</h3>
+            <p>把学到的知识整理清楚，也方便以后回头看。</p>
+            <span class="work-tag">进入</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+          </article>
+          <article class="work-row reveal">
+            <span class="work-num">03</span>
+            <h3>小小俊的经历</h3>
+            <p>魔丸俊的小自传，感兴趣的进来看看吧！</p>
+            <span class="work-tag">进入</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">04 / 联系</p>
+          <h2 class="display">联系我</h2>
+          <p class="section-sub">想聊天、提建议，或者一起做点好玩的事，小小俊都欢迎你们的到来。</p>
+        </div>
+        <div class="contact-block reveal">
+          <button class="contact-email" id="copy-email" type="button">
+            <span>481116384@qq.com</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+          </button>
+          <div class="contact-links">
+            <a href="weixin://" id="wechat-link" rel="noopener">
+              <span class="wechat-label">WeChat：19851706601<svg class="copy-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+            </a>
+            <a href="https://www.douyin.com/user/MS4wLjABAAAA7sUz2d7PM_hbyAmrOqEgBb5haLgcrTvOX9lUIEAIiBIUS5wTE4le3fg-gUP7JoO-" target="_blank" rel="noopener">
+              <span>TikTok</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> 小小俊</span>
+      <span class="footer-note">慢慢来，也一直往前走。</span>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5 5m5-5 5 5"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">邮箱已复制</div>
+
+  <script src="assets/echarts.min.js"></script>
+  <script src="assets/china-map-data.js"></script>
+  <script src="js/travel-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

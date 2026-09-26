@@ -10,10 +10,10 @@
   var sceneDetail = document.getElementById("entry-scene-detail");
   var sceneProgress = document.getElementById("entry-scene-progress");
   var sceneData = [
-    { number: "01", name: "海上余光", detail: "SEA / AFTERGLOW · 18:42" },
-    { number: "02", name: "城市余温", detail: "CITY / LAST LIGHT · 18:57" },
-    { number: "03", name: "暮色步道", detail: "SKYLINE / LAST LIGHT · 18:31" },
-    { number: "04", name: "岛上晚风", detail: "ISLAND / WARM WIND · 19:06" }
+    { number: "01", name: "城市余温", detail: "CITY / LAST LIGHT · 18:57" },
+    { number: "02", name: "岛上晚风", detail: "ISLAND / WARM WIND · 19:06" },
+    { number: "03", name: "海上余光", detail: "SEA / AFTERGLOW · 18:42" },
+    { number: "04", name: "远方潮汐", detail: "DISTANT TIDE · 18:18" }
   ];
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var activeIndex = 0;

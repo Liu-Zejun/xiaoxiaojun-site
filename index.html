@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17161a">
+  <meta name="color-scheme" content="dark">
   <title>小小俊 · 个人网站</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,22 +12,28 @@
   <link rel="stylesheet" href="css/entry.css">
 </head>
 <body class="entry-page">
-  <main class="entry-scene" id="entry-scene">
-    <div class="entry-backdrop" aria-hidden="true"></div>
-    <video class="entry-video" autoplay muted loop playsinline preload="metadata" poster="images/entry-city.jpg" aria-hidden="true">
-      <source src="videos/entry-cyberpunk.mp4" type="video/mp4">
-    </video>
-    <div class="entry-overlay" aria-hidden="true"></div>
-    <div class="entry-rays" aria-hidden="true"></div>
-    <div class="entry-dust" aria-hidden="true"></div>
+  <a class="skip-link" href="home.html">跳过封面，进入网站</a>
+  <main class="entry-main" id="main">
+    <a class="entry-scene" id="entry-scene" href="home.html" aria-label="进入小小俊的个人网站">
+      <div class="entry-media" aria-hidden="true">
+        <img src="images/entry-dusk.jpg" alt="" width="1920" height="1280" fetchpriority="high" decoding="async">
+      </div>
+      <div class="entry-shade" aria-hidden="true"></div>
 
-    <div class="entry-title-block">
-      <p class="entry-kicker">小小俊 · 个人网站</p>
-      <h1 class="entry-title">日落之后，故事开始</h1>
-      <p class="entry-tip">点击任意位置，进入我的世界</p>
-    </div>
+      <div class="entry-content">
+        <p class="entry-kicker">小小俊 · 个人网站</p>
+        <h1 class="entry-title">日落之后，故事开始</h1>
+        <div class="entry-rule" aria-hidden="true"></div>
+        <p class="entry-meta"><span id="entry-year">2026</span><span class="entry-meta-line" aria-hidden="true"></span><span>个人档案</span></p>
+      </div>
+
+      <p class="entry-hint">
+        <span class="entry-hint-line" aria-hidden="true"></span>
+        <span>点击任意位置，进入我的世界</span>
+        <svg class="entry-hint-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+      </p>
+    </a>
   </main>
-
   <script src="js/entry.js"></script>
 </body>
 </html>

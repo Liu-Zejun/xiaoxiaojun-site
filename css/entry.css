@@ -236,6 +236,19 @@ body.entry-page {
   opacity: 1;
 }
 
+.entry-archive-card.is-active::after {
+  content: "NOW";
+  position: absolute;
+  top: 0.72rem;
+  right: 0.72rem;
+  padding: 0.14rem 0.3rem;
+  background: var(--entry-amber);
+  color: var(--entry-ink);
+  font-size: 0.46rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
 .entry-archive-card:nth-child(1).is-active {
   transform: translateX(-0.8rem) rotate(-1.2deg);
 }
@@ -408,6 +421,65 @@ body.entry-page {
   color: var(--entry-amber);
 }
 
+.entry-scene-readout {
+  position: absolute;
+  right: clamp(2rem, 6vw, 6.5rem);
+  bottom: clamp(6.3rem, 9vh, 7rem);
+  z-index: 4;
+  width: 12.5rem;
+  padding-right: env(safe-area-inset-right);
+  text-align: right;
+  animation: entry-rail-in 1s ease-out 1.05s both;
+}
+
+.entry-scene-readout-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+#entry-scene-number {
+  color: var(--entry-amber);
+  font-size: 0.58rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+#entry-scene-name {
+  color: var(--entry-paper);
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  font-size: 0.82rem;
+}
+
+#entry-scene-detail {
+  margin-top: 0.28rem;
+  color: var(--entry-paper-dim);
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+}
+
+.entry-scene-progress {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 0.68rem;
+  overflow: hidden;
+  background: rgba(243, 235, 223, 0.2);
+}
+
+#entry-scene-progress {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--entry-amber);
+  transform: scaleX(0.25);
+  transform-origin: left center;
+  transition: transform 520ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
 .entry-hint-wrap {
   position: absolute;
   right: clamp(2rem, 6vw, 6.5rem);
@@ -479,6 +551,7 @@ body.entry-page {
 .entry-scene.is-leaving .entry-copy,
 .entry-scene.is-leaving .entry-archive,
 .entry-scene.is-leaving .entry-filmstrip,
+.entry-scene.is-leaving .entry-scene-readout,
 .entry-scene.is-leaving .entry-hint-wrap,
 .entry-scene.is-leaving .entry-topline {
   animation: none;
@@ -613,6 +686,11 @@ body.entry-page {
     display: none;
   }
 
+  .entry-archive-card.is-active::after,
+  .entry-scene-readout {
+    display: none;
+  }
+
   .entry-copy {
     right: 1.25rem;
     bottom: 8rem;
@@ -704,6 +782,10 @@ body.entry-page {
   .entry-hint-sub {
     display: none;
   }
+
+  .entry-scene-readout {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -715,8 +797,10 @@ body.entry-page {
   .entry-archive,
   .entry-copy,
   .entry-filmstrip,
+  .entry-scene-readout,
   .entry-hint-wrap,
   .entry-hint-arrow,
+  #entry-scene-progress,
   .skip-link {
     animation: none;
     transition: none;
@@ -734,6 +818,7 @@ body.entry-page {
   .entry-archive,
   .entry-copy,
   .entry-filmstrip,
+  .entry-scene-readout,
   .entry-hint-wrap {
     opacity: 1;
     transform: none;

@@ -5,6 +5,16 @@
   var sceneImages = Array.prototype.slice.call(document.querySelectorAll(".entry-scene-image"));
   var archiveCards = Array.prototype.slice.call(document.querySelectorAll(".entry-archive-card"));
   var filmItems = Array.prototype.slice.call(document.querySelectorAll(".entry-film-item"));
+  var sceneNumber = document.getElementById("entry-scene-number");
+  var sceneName = document.getElementById("entry-scene-name");
+  var sceneDetail = document.getElementById("entry-scene-detail");
+  var sceneProgress = document.getElementById("entry-scene-progress");
+  var sceneData = [
+    { number: "01", name: "海上余光", detail: "SEA / AFTERGLOW · 18:42" },
+    { number: "02", name: "城市余温", detail: "CITY / LAST LIGHT · 18:57" },
+    { number: "03", name: "暮色步道", detail: "SKYLINE / LAST LIGHT · 18:31" },
+    { number: "04", name: "岛上晚风", detail: "ISLAND / WARM WIND · 19:06" }
+  ];
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var activeIndex = 0;
   var pointerFrame = 0;
@@ -23,6 +33,13 @@
     filmItems.forEach(function (item, itemIndex) {
       item.classList.toggle("is-active", itemIndex === index);
     });
+
+    if (sceneNumber) sceneNumber.textContent = sceneData[index].number;
+    if (sceneName) sceneName.textContent = sceneData[index].name;
+    if (sceneDetail) sceneDetail.textContent = sceneData[index].detail;
+    if (sceneProgress) {
+      sceneProgress.style.transform = "scaleX(" + ((index + 1) / sceneImages.length).toFixed(3) + ")";
+    }
   }
 
   function updateClock() {
@@ -73,6 +90,15 @@
     if (event.key === " " || event.key === "Spacebar") {
       event.preventDefault();
       scene.click();
+      return;
+    }
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      event.preventDefault();
+      setActiveFrame((activeIndex + 1) % sceneImages.length);
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      event.preventDefault();
+      setActiveFrame((activeIndex - 1 + sceneImages.length) % sceneImages.length);
     }
   });
 

@@ -14,7 +14,7 @@
 <body class="entry-page">
   <a class="skip-link" href="home.html">跳过封面，进入网站</a>
   <main class="entry-main" id="main">
-    <a class="entry-scene" id="entry-scene" href="home.html" aria-label="进入小小俊的个人网站">
+    <a class="entry-scene" id="entry-scene" href="home.html" aria-label="进入小小俊的个人网站。左右方向键可翻阅余光。">
       <div class="entry-scenes" aria-hidden="true">
         <img class="entry-scene-image is-active" src="images/snap-collection/6.jpg" alt="" width="1280" height="960" fetchpriority="high" decoding="async">
         <img class="entry-scene-image" src="images/snap-collection/1.jpg" alt="" width="1600" height="1200" decoding="async">
@@ -79,13 +79,22 @@
         </div>
       </div>
 
+      <div class="entry-scene-readout" aria-hidden="true">
+        <div class="entry-scene-readout-head">
+          <span id="entry-scene-number">01</span>
+          <span id="entry-scene-name">海上余光</span>
+        </div>
+        <p id="entry-scene-detail">SEA / AFTERGLOW · 18:42</p>
+        <span class="entry-scene-progress"><span id="entry-scene-progress"></span></span>
+      </div>
+
       <div class="entry-hint-wrap" aria-hidden="true">
         <p class="entry-hint">
           <span class="entry-hint-line"></span>
           <span>点击任意位置，进入我的世界</span>
           <svg class="entry-hint-arrow" viewBox="0 0 24 24"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
         </p>
-        <p class="entry-hint-sub">移动光标，翻阅余光</p>
+        <p class="entry-hint-sub">移动光标或按方向键，翻阅余光</p>
       </div>
     </a>
   </main>

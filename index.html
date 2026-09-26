@@ -3,35 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#17161a">
+  <meta name="theme-color" content="#0c1113">
   <meta name="color-scheme" content="dark">
   <title>小小俊 · 个人网站</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/entry.css">
 </head>
 <body class="entry-page">
   <a class="skip-link" href="home.html">跳过封面，进入网站</a>
   <main class="entry-main" id="main">
     <a class="entry-scene" id="entry-scene" href="home.html" aria-label="进入小小俊的个人网站">
-      <div class="entry-media" aria-hidden="true">
-        <img src="images/entry-dusk.jpg" alt="" width="1920" height="1280" fetchpriority="high" decoding="async">
+      <div class="entry-scenes" aria-hidden="true">
+        <img class="entry-scene-image is-active" src="images/snap-collection/6.jpg" alt="" width="1280" height="960" fetchpriority="high" decoding="async">
+        <img class="entry-scene-image" src="images/snap-collection/1.jpg" alt="" width="1600" height="1200" decoding="async">
+        <img class="entry-scene-image" src="images/snap-collection/2.jpg" alt="" width="1600" height="1200" decoding="async">
+        <img class="entry-scene-image" src="images/snap-collection/8.jpg" alt="" width="1600" height="1200" decoding="async">
       </div>
-      <div class="entry-shade" aria-hidden="true"></div>
+      <div class="entry-wash" aria-hidden="true"></div>
+      <div class="entry-intro" aria-hidden="true"></div>
+      <div class="entry-cropmarks" aria-hidden="true"></div>
 
-      <div class="entry-content">
-        <p class="entry-kicker">小小俊 · 个人网站</p>
-        <h1 class="entry-title">日落之后，故事开始</h1>
-        <div class="entry-rule" aria-hidden="true"></div>
-        <p class="entry-meta"><span id="entry-year">2026</span><span class="entry-meta-line" aria-hidden="true"></span><span>个人档案</span></p>
+      <div class="entry-topline" aria-hidden="true">
+        <p class="entry-wordmark"><span>小小俊</span><span>个人网站</span></p>
+        <div class="entry-live">
+          <span class="entry-live-label">LOCAL TIME</span>
+          <time id="entry-time" datetime="">--:--:--</time>
+          <span class="entry-coordinate">XIAMEN · 24.5°N</span>
+        </div>
       </div>
 
-      <p class="entry-hint">
-        <span class="entry-hint-line" aria-hidden="true"></span>
-        <span>点击任意位置，进入我的世界</span>
-        <svg class="entry-hint-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
-      </p>
+      <div class="entry-archive" aria-hidden="true">
+        <figure class="entry-archive-card is-active" data-index="0">
+          <div class="entry-archive-photo"><img src="images/snap-collection/6.jpg" alt="" width="1280" height="960" loading="lazy"></div>
+          <figcaption><span>01</span><span>SEA / AFTERGLOW</span></figcaption>
+        </figure>
+        <figure class="entry-archive-card" data-index="1">
+          <div class="entry-archive-photo"><img src="images/snap-collection/1.jpg" alt="" width="1600" height="1200" loading="lazy"></div>
+          <figcaption><span>02</span><span>CITY / LAST LIGHT</span></figcaption>
+        </figure>
+        <figure class="entry-archive-card" data-index="2">
+          <div class="entry-archive-photo"><img src="images/snap-collection/2.jpg" alt="" width="1600" height="1200" loading="lazy"></div>
+          <figcaption><span>03</span><span>SKYLINE / 18:31</span></figcaption>
+        </figure>
+        <figure class="entry-archive-card" data-index="3">
+          <div class="entry-archive-photo"><img src="images/snap-collection/8.jpg" alt="" width="1600" height="1200" loading="lazy"></div>
+          <figcaption><span>04</span><span>ISLAND / WARM WIND</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="entry-copy">
+        <p class="entry-kicker">余光档案 / AFTERLIGHT ARCHIVE</p>
+        <h1 class="entry-title">
+          <span>日落之后，</span>
+          <span>故事开始</span>
+        </h1>
+        <p class="entry-slogan">把每一次出发，留在余光里。</p>
+        <p class="entry-meta">
+          <span id="entry-year">2026</span>
+          <span class="entry-meta-line" aria-hidden="true"></span>
+          <span>个人档案</span>
+          <span class="entry-meta-line" aria-hidden="true"></span>
+          <span>生活在别处</span>
+        </p>
+      </div>
+
+      <div class="entry-filmstrip" aria-hidden="true">
+        <span class="entry-film-label">SCENES</span>
+        <div class="entry-film-list">
+          <div class="entry-film-item is-active" data-index="0"><img src="images/snap-collection/6.jpg" alt="" width="1280" height="960"><span>01</span></div>
+          <div class="entry-film-item" data-index="1"><img src="images/snap-collection/1.jpg" alt="" width="1600" height="1200"><span>02</span></div>
+          <div class="entry-film-item" data-index="2"><img src="images/snap-collection/2.jpg" alt="" width="1600" height="1200"><span>03</span></div>
+          <div class="entry-film-item" data-index="3"><img src="images/snap-collection/8.jpg" alt="" width="1600" height="1200"><span>04</span></div>
+        </div>
+      </div>
+
+      <div class="entry-hint-wrap" aria-hidden="true">
+        <p class="entry-hint">
+          <span class="entry-hint-line"></span>
+          <span>点击任意位置，进入我的世界</span>
+          <svg class="entry-hint-arrow" viewBox="0 0 24 24"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+        </p>
+        <p class="entry-hint-sub">移动光标，翻阅余光</p>
+      </div>
     </a>
   </main>
   <script src="js/entry.js"></script>

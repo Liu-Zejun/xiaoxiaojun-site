@@ -28,6 +28,80 @@
     }
   }
 
+  // 某些栏目以站内数据为准：替换掉这一栏目的旧照片与旧评论，
+  // 避免云端或浏览器里的残留数据把已经删掉的内容又带回来。
+  function applyAuthoritativeSections(target, recovery) {
+    var sections = recovery.__authoritative_sections;
+    if (!sections || !sections.length) return false;
+
+    var changed = false;
+    var commentsKey = "xxj_album_photo_comments_v1";
+    var likesKey = "xxj_album_likes_v1";
+    var locationsKey = "xxj_album_owner_locations_v1";
+    var photosKey = "xxj_album_photos_v1";
+    var keys = [commentsKey, likesKey, locationsKey];
+
+    sections.forEach(function (section) {
+      if (!section || !section.province || !section.category) return;
+      var ownerPrefix = "owner|" + section.province + "|" + section.category + "|";
+      var communityPrefix = "community|" + section.province + "|" + section.category + "|";
+
+      keys.forEach(function (key) {
+        var seed = parseStoredObject(recovery[key]);
+        var current = parseStoredObject(target[key]);
+        var next = {};
+        Object.keys(current).forEach(function (photoId) {
+          if (photoId.indexOf(ownerPrefix) === 0) return;
+          if (photoId.indexOf(communityPrefix) === 0) return;
+          next[photoId] = current[photoId];
+        });
+        (section.photoIds || []).forEach(function (photoId) {
+          if (Object.prototype.hasOwnProperty.call(seed, photoId)) {
+            next[photoId] = seed[photoId];
+          }
+        });
+        var nextValue = JSON.stringify(next);
+        if (nextValue !== target[key]) {
+          target[key] = nextValue;
+          changed = true;
+        }
+      });
+
+      var photos = parseStoredObject(target[photosKey]);
+      var provincePhotos = photos[section.province];
+      if (provincePhotos && typeof provincePhotos === "object") {
+        var list = provincePhotos[section.category];
+        if (Array.isArray(list) && list.length) {
+          provincePhotos[section.category] = [];
+          target[photosKey] = JSON.stringify(photos);
+          changed = true;
+        }
+      }
+
+      // 整栏照片替换后，旧的“隐藏照片”记录索引会对不上号，
+      // 留着会把新照片误当成被隐藏的照片，所以清掉这一栏的记录。
+      try {
+        var hiddenRaw = window.localStorage.getItem("xxj_album_hidden_owner_v1");
+        if (hiddenRaw) {
+          var hiddenList = JSON.parse(hiddenRaw);
+          if (Array.isArray(hiddenList)) {
+            var nextHidden = hiddenList.filter(function (photoId) {
+              return String(photoId).indexOf(ownerPrefix) !== 0;
+            });
+            if (nextHidden.length !== hiddenList.length) {
+              window.localStorage.setItem(
+                "xxj_album_hidden_owner_v1",
+                JSON.stringify(nextHidden)
+              );
+            }
+          }
+        }
+      } catch (e) {}
+    });
+
+    return changed;
+  }
+
   function mergeAlbumRecovery(target) {
     var recovery = window.__ALBUM_RECOVERY_DATA;
     if (!recovery || !target) return false;
@@ -87,6 +161,8 @@
       target[locationsKey] = nextLocations;
       changed = true;
     }
+
+    if (applyAuthoritativeSections(target, recovery)) changed = true;
 
     return changed;
   }
